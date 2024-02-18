@@ -11,11 +11,6 @@
 <body>
     <?php
     session_start();
-    if (isset($_POST['guest'])) {
-        $_SESSION['guest'] = true;
-    } else {
-        $_SESSION['guest'] = false;
-    }
     include('navbar.php');
     ?>
 

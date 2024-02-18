@@ -11,7 +11,7 @@
 <body>
     <?php
     session_start();
-    if ($_SESSION['guest'] == true) {
+    if (!(isset($_SESSION['loggedin']))) {
         header('Location: main.php');
     }
     include('navbar.php');
