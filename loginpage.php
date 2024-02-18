@@ -10,11 +10,11 @@
 <body>
     <form action='loginauth.php' method='POST'>
         <label for='username'>Username:</label>
-        <input type='text' name="username" id="username" placeholder="Username">
+        <input type='text' name="username" id="username" placeholder="Enter Username">
         <br>
         <br>
         <label for='password'>Password:</label>
-        <input type='text' name="password" id="password" placeholder="Password">
+        <input type='text' name="password" id="password" placeholder="Enter Password">
         <button>Submit</button>
         <br>
         <br>
