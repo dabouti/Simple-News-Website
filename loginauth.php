@@ -13,7 +13,7 @@ if (!$stmt) {
 $stmt->execute();
 $stmt->bind_result($user, $password);
 if ($stmt->fetch()) {
-    header("Location: database.php");
+    header("Location: main.php");
 } else {
     header("Location: loginpage.php");
 }

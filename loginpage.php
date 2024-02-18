@@ -23,6 +23,12 @@
     <form action='signuppage.php'>
         <button>Sign Up</button>
     </form>
+
+    <form action='main.php' method='POST'>
+        <input type='hidden' name='guest'>
+        <button>Continue as guest</button>
+    </form>
+
 </body>
 
 </html>

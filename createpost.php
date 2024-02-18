@@ -4,19 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>Create Post</title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
     <?php
     session_start();
-    if (isset($_POST['guest'])) {
-        $_SESSION['guest'] = true;
-    } else {
-        $_SESSION['guest'] = false;
+    if ($_SESSION['guest'] == true) {
+        header('Location: main.php');
     }
     include('navbar.php');
+
     ?>
 
 
