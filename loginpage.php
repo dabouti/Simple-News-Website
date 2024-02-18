@@ -1,3 +1,9 @@
+<?php
+session_start();
+if ($_SESSION['loggedin'] == true) {
+    header("Location: main.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,8 +30,7 @@
         <button>Sign Up</button>
     </form>
 
-    <form action='main.php' method='POST'>
-        <input type='hidden' name='guest'>
+    <form action='main.php'>
         <button>Continue as guest</button>
     </form>
 
