@@ -12,9 +12,10 @@ if (!$stmt) {
 }
 
 $stmt->execute();
-$stmt->bind_result($user, $password);
+$stmt->bind_result($user, $pass);
 if ($stmt->fetch()) {
     $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $username;
     header("Location: main.php");
 } else {
     header("Location: loginpage.php");

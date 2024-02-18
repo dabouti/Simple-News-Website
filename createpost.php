@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require 'database.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post</title>
-    <link rel="stylesheet" type="text/css" href="navbar.css">
-</head>
+$title = $_POST['title'];
+$postbody = $_POST['postbody'];
+$username = $_SESSION['username'];
+$currentDate = date("Y-m-d");
 
-<body>
-    <?php
-    session_start();
-    if (!(isset($_SESSION['loggedin']))) {
-        header('Location: main.php');
-    }
-    include('navbar.php');
+$stmt = $mysqli->prepare("insert into posts (post_username, post_date, post_title, post_body) values (?, ?, ?, ?)");
+if(!$stmt){
+	printf("Query Prep Failed: %s\n", $mysqli->error);
+	exit;
+}
 
-    ?>
+$stmt->bind_param('ssss', $username, $currentDate, $title, $postbody);
 
+$stmt->execute();
 
-</body>
+$stmt->close();
 
-</html>
+?>
