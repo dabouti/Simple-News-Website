@@ -28,12 +28,18 @@
             echo "<form action='edittitle.php' method='POST'>
             <label for='newtitle'>Please enter your new post title:</label>
             <textarea name='newtitle' id='newtitle'>$post_title</textarea>
+            <input type='hidden' name='postid' value='$post_id'>
             <button>Submit New title</button>
         </form>
         <form action='editbody.php' method='POST'>
             <label for='postbody'>Please enter your post body:</label>
             <textarea name='postbody' id='postbody'>$post_body</textarea>
+            <input type='hidden' name='postid' value='$post_id'>
             <button>Submit New Body</button>
+        </form>
+        <form action='deletepost.php' method='POST'>
+            <input type='hidden' name='postid' value='$post_id'>
+            <button>Delete Post</button>
         </form>";
         }
         $stmt->close();
