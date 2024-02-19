@@ -1,6 +1,6 @@
 <?php
 require 'database.php';
-
+session_start();
 $title = $_POST['title'];
 $postbody = $_POST['postbody'];
 $username = $_SESSION['username'];
