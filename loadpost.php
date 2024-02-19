@@ -24,6 +24,18 @@
         echo "<h1>$post_title</h1>";
         echo "posted by: $post_username on $post_date";
         echo "<br><br> Body: $post_body";
+        if($_SESSION['username'] == $post_username) {
+            echo "<form action='edittitle.php' method='POST'>
+            <label for='newtitle'>Please enter your new post title:</label>
+            <textarea name='newtitle' id='newtitle'>$post_title</textarea>
+            <button>Submit New title</button>
+        </form>
+        <form action='editbody.php' method='POST'>
+            <label for='postbody'>Please enter your post body:</label>
+            <textarea name='postbody' id='postbody'>$post_body</textarea>
+            <button>Submit New Body</button>
+        </form>";
+        }
         $stmt->close();
     ?>
     <form action=createcomment.php method="POST">

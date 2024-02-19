@@ -13,7 +13,7 @@
     session_start();
     require 'database.php';
     include('navbar.php');
-    $stmt = $mysqli->prepare("select post_title, post_username, post_date, post_id from posts");
+    $stmt = $mysqli->prepare("select post_title, post_username, post_date, post_id from posts order by post_date desc");
     if (!$stmt) {
         printf("Query Prep Failed: %s\n", $mysqli->error);
         exit;
