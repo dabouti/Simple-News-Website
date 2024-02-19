@@ -4,7 +4,7 @@ session_start();
 $title = $_POST['title'];
 $postbody = $_POST['postbody'];
 $username = $_SESSION['username'];
-$currentDate = date('Y-m-d H:i:s');
+$currentDate = date('Y-m-d H:i');
 
 $stmt = $mysqli->prepare("insert into posts (post_username, post_date, post_title, post_body) values (?, ?, ?, ?)");
 if(!$stmt){
