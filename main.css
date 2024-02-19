@@ -1,0 +1,21 @@
+.posttitle {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+
+.postlink:link {
+    color: blue;
+    text-decoration: none;
+}
+
+.postlink:visited {
+    color: purple;
+    text-decoration: none;
+}
+
+.postdetails {
+    font-size: 15px;
+    color: gray;
+    margin: 0;
+}

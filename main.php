@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link rel="stylesheet" type="text/css" href="navbar.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
@@ -24,7 +25,7 @@
     echo "<ol>\n";
     while ($stmt->fetch()) {
         printf(
-            "\t<li><a href='loadpost.php?id=%s'>%s %s %s</a></li>\n",
+            "\t<li><a class='postlink' href='loadpost.php?id=%s'><p class='posttitle'>%s</p></a><p class='postdetails'>%s on %s</p></li>\n",
             htmlspecialchars($post_id),
             htmlspecialchars($post_title),
             htmlspecialchars($post_username),
