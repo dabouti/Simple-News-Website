@@ -20,7 +20,7 @@ if ($_SESSION['loggedin'] == true) {
         <br>
         <br>
         <label for='password'>Password:</label>
-        <input type='text' name="password" id="password" placeholder="Enter Password">
+        <input type='password' name="password" id="password" placeholder="Enter Password">
         <button>Submit</button>
         <br>
         <br>
