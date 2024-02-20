@@ -87,7 +87,7 @@
             <form action='deletecomment.php' method='POST'>
             <input type='hidden' name='post_id' value='$post_id'>
             <input type='hidden' name='comment_id' value='$comment_id'>
-            <button>Delete Post</button>
+            <button>Delete Comment</button>
             </form>";
         }
     }
