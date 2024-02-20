@@ -56,7 +56,7 @@
         <button>Submit Comment</button>
     </form>
     <?php
-    $stmt = $mysqli->prepare("select comment_username, comment_date, comment_body from comments where comment_id='$post_id'");
+    $stmt = $mysqli->prepare("select comment_username, comment_date, comment_body from comments where comment_postid='$post_id'");
     if (!$stmt) {
         printf("Query Prep Failed: %s\n", $mysqli->error);
         exit;
