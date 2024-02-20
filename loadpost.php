@@ -58,7 +58,7 @@
         <br>
     </form>
     <?php
-    $stmt = $mysqli->prepare("select comment_username, comment_date, comment_body from comments where comment_postid='$post_id'");
+    $stmt = $mysqli->prepare("select comment_username, comment_date, comment_body, comment_id from comments where comment_postid='$post_id'");
     if (!$stmt) {
         printf("Query Prep Failed: %s\n", $mysqli->error);
         exit;
@@ -66,7 +66,7 @@
 
     $stmt->execute();
 
-    $stmt->bind_result($comment_username, $comment_date, $comment_body);
+    $stmt->bind_result($comment_username, $comment_date, $comment_body, $comment_id);
 
     echo "<ol>\n";
     while ($stmt->fetch()) {
@@ -76,6 +76,15 @@
             htmlspecialchars($comment_date),
             htmlspecialchars($comment_body)
         );
+        if ($comment_username == $_SESSION['username']) {
+            echo "<form action='editcomment.php' method='POST'>
+            <label for='new_body'>Please enter your new comment:</label>
+            <textarea name='new_body' id='new_body'>$comment_body</textarea>
+            <input type='hidden' name='post_id' value='$post_id'>
+            <input type='hidden' name='comment_id' value='$comment_id'>
+            <button>Submit New title</button>
+            </form>";
+        }
     }
     echo "</ol>\n";
 
