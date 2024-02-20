@@ -14,6 +14,7 @@ if ($_SESSION['loggedin'] == true) {
 </head>
 
 <body>
+    <p>Login:</p>
     <form action='loginauth.php' method='POST'>
         <label for='username'>Username:</label>
         <input type='text' name="username" id="username" placeholder="Enter Username">

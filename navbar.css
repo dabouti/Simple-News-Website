@@ -1,6 +1,8 @@
 .navbar {
     background-color: black;
     overflow: hidden;
+    margin-left: -8px;
+    margin-top: -8px;
 }
 
 .navbar a {
@@ -17,6 +19,3 @@
     color: black;
 }
 
-body {
-    margin: 0;
-}

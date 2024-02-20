@@ -25,7 +25,7 @@
     $stmt->fetch();
     echo "<h1>$post_title</h1>";
     echo "posted by: $post_username on $post_date";
-    echo "<br><br> Body: $post_body";
+    echo "<br><br> Body: $post_body <br>";
     echo "<br> Link: <a href='$post_link'>$post_link</a>";
     if ($_SESSION['username'] == $post_username) {
         echo "<form action='edittitle.php' method='POST'>
@@ -54,6 +54,8 @@
         <label for="commentbody">Post Comment:</label>
         <textarea name="commentbody" id="commentbody"></textarea>
         <button>Submit Comment</button>
+        <br>
+        <br>
     </form>
     <?php
     $stmt = $mysqli->prepare("select comment_username, comment_date, comment_body from comments where comment_postid='$post_id'");
@@ -69,7 +71,7 @@
     echo "<ol>\n";
     while ($stmt->fetch()) {
         printf(
-            "\t<li>%s on %s<br> Comment: %s</li>\n",
+            "\t<li>%s on %s<br> Comment: %s</li><br><br>\n",
             htmlspecialchars($comment_username),
             htmlspecialchars($comment_date),
             htmlspecialchars($comment_body)
