@@ -28,12 +28,12 @@ if ($_SESSION['loggedin'] == true) {
     </form>
     <p>Sign Up:</p>
     <form action='signupauth.php' method='POST'>
-        <label for='username'>Username:</label>
-        <input type='text' name="username" id="username" placeholder="Enter Username">
+        <label for='username2'>Username:</label>
+        <input type='text' name="username" id="username2" placeholder="Enter Username">
         <br>
         <br>
-        <label for='username'>Password:</label>
-        <input type='text' name="password" id="password" placeholder="Enter Password">
+        <label for='password2'>Password:</label>
+        <input type='password' name="password" id="password2" placeholder="Enter Password">
         <button>Submit</button>
         <br>
         <br>

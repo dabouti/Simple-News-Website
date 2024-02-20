@@ -48,18 +48,18 @@
     echo "<br><br> Body: $post_body <br>";
     echo "<br> Link: <a href='$post_link'>$post_link</a>";
     $stmt->close();
-    ?>
-    <form action=createcomment.php method="POST">
-        <input type="hidden" name="postid" value="<?php echo $post_id ?>">
+    if ($_SESSION['loggedin'] == true) {
+    echo "<form action=createcomment.php method='POST'>
+        <input type='hidden' name='postid' value='$post_id'>
         <br>
         <br>
-        <label for="commentbody">Post Comment:</label>
-        <textarea name="commentbody" id="commentbody"></textarea>
+        <label for='commentbody'>Post Comment:</label>
+        <textarea name='commentbody' id='commentbody'></textarea>
         <button>Submit Comment</button>
         <br>
         <br>
-    </form>
-    <?php
+    </form>";
+    }
     $stmt = $mysqli->prepare("select comment_username, comment_date, comment_body, comment_id from comments where comment_postid='$post_id'");
     if (!$stmt) {
         printf("Query Prep Failed: %s\n", $mysqli->error);
