@@ -13,7 +13,7 @@ if (!$stmt) {
 $stmt->execute();
 $stmt->bind_result($user);
 if ($stmt->fetch()) {
-    header("Location: signuppage.php");
+    header("Location: loginpage.php");
     exit;
 }
 
