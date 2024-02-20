@@ -5,14 +5,14 @@ require 'checkloggedin.php';
 $new_body = $_POST['new_body'];
 $post_id = $_POST['post_id'];
 $comment_id = $_POST['comment_id'];
-$stmt = $mysqli->prepare("update comments set comment_body='$new_body' where comment_postid='$post_id' and comment_id='$comment_id'");
+$stmt = $mysqli->prepare("update comments set comment_body = ? where comment_postid = ? and comment_id = ?");
 if (!$stmt) {
     printf("Query Prep Failed: %s\n", $mysqli->error);
     exit;
 }
 
+$stmt->bind_param("sii", $new_body, $post_id, $comment_id);
 $stmt->execute();
-$stmt->bind_param("s", $new_body);
 $stmt->close();
-header("Location: loadpost?id=$post_id.php");
+header("Location: loadpost?id=$post_id");
 ?>
