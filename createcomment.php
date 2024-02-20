@@ -1,7 +1,7 @@
 <?php
     require 'database.php';
     session_start();
-
+    require 'checkloggedin.php';
     $comment_postid = $_POST['postid'];
     $comment_body = $_POST['commentbody'];
     $comment_username = $_SESSION['username'];

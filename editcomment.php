@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'database.php';
+require 'checkloggedin.php';
 $new_body = $_POST['new_body'];
 $post_id = $_POST['post_id'];
 $comment_id = $_POST['comment_id'];

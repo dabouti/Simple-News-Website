@@ -1,6 +1,7 @@
 <?php
 require 'database.php';
 session_start();
+require 'checkloggedin.php';
 $title = $_POST['title'];
 $postbody = $_POST['postbody'];
 $username = $_SESSION['username'];

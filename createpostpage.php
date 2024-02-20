@@ -11,9 +11,7 @@
 <body>
     <?php
     session_start();
-    if (!(isset($_SESSION['loggedin']))) {
-            header('Location: main.php');
-    }
+    require 'checkloggedin.php';
     include('navbar.php');
     ?>
     <form action='createpost.php' method='POST'>

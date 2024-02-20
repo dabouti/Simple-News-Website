@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'database.php';
+require 'checkloggedin.php';
 $newtitle = $_POST['newtitle'];
 $post_id = $_POST['post_id'];
 $stmt = $mysqli->prepare("update posts set post_title='$newtitle' where post_id='$post_id'");
