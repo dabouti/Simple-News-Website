@@ -14,18 +14,19 @@
     require 'database.php';
     include 'navbar.php';
     $post_id = $_GET['id'];
-    $stmt = $mysqli->prepare("select post_title, post_username, post_date, post_body from posts where post_id='$post_id'");
+    $stmt = $mysqli->prepare("select post_title, post_username, post_date, post_body, post_link from posts where post_id='$post_id'");
     if (!$stmt) {
         printf("Query Prep Failed: %s\n", $mysqli->error);
         exit;
     }
     $stmt->execute();
-    $stmt->bind_result($post_title, $post_username, $post_date, $post_body);
+    $stmt->bind_result($post_title, $post_username, $post_date, $post_body, $post_link);
 
     $stmt->fetch();
     echo "<h1>$post_title</h1>";
     echo "posted by: $post_username on $post_date";
     echo "<br><br> Body: $post_body";
+    echo "<br> Link: <a href='$post_link'>$post_link</a>";
     if ($_SESSION['username'] == $post_username) {
         echo "<form action='edittitle.php' method='POST'>
             <label for='newtitle'>Please enter your new post title:</label>
