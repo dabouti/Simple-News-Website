@@ -14,11 +14,12 @@
     require 'database.php';
     include 'navbar.php';
     $post_id = $_GET['id'];
-    $stmt = $mysqli->prepare("select post_title, post_username, post_date, post_body, post_link from posts where post_id='$post_id'");
+    $stmt = $mysqli->prepare("select post_title, post_username, post_date, post_body, post_link from posts where post_id = ?");
     if (!$stmt) {
         printf("Query Prep Failed: %s\n", $mysqli->error);
         exit;
     }
+    $stmt->bind_param("i", $post_id);
     $stmt->execute();
     $stmt->bind_result($post_title, $post_username, $post_date, $post_body, $post_link);
 
@@ -49,7 +50,7 @@
     echo "<br> Link: <a href='$post_link'>$post_link</a>";
     $stmt->close();
     if ($_SESSION['loggedin'] == true) {
-    echo "<form action=createcomment.php method='POST'>
+        echo "<form action=createcomment.php method='POST'>
         <input type='hidden' name='postid' value='$post_id'>
         <br>
         <br>
@@ -60,11 +61,12 @@
         <br>
     </form>";
     }
-    $stmt = $mysqli->prepare("select comment_username, comment_date, comment_body, comment_id from comments where comment_postid='$post_id'");
+    $stmt = $mysqli->prepare("select comment_username, comment_date, comment_body, comment_id from comments where comment_postid = ?");
     if (!$stmt) {
         printf("Query Prep Failed: %s\n", $mysqli->error);
         exit;
     }
+    $stmt->bind_param("i", $post_id);
 
     $stmt->execute();
 
