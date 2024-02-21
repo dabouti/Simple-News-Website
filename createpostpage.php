@@ -22,7 +22,7 @@
                 <label for='title'>Please enter your post title:</label>
                 <input type='text' name="title" id="title" placeholder="Enter Post Title" required>
                 <!-- send CSRF token below -->
-                <input type='hidden' name='token' value='<?php echo $_SESSION['token']; ?>'> 
+                <input type='hidden' name='token' value='<?php echo $_SESSION['token']; ?>'>
 
             </p>
             <p>
@@ -36,9 +36,9 @@
             </p>
             <br>
             <!-- input for uploading image below -->
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000000" />
-		        <label for="uploadfile_input">(OPTIONAL) (MUST BE JPG/JPEG/PNG) Upload Image</label> 
-                <input name="uploadedfile" type="file" id="uploadfile_input" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="20000000" />
+            <label for="uploadfile_input">(OPTIONAL) (MUST BE JPG/JPEG/PNG) Upload Image</label>
+            <input name="uploadedfile" type="file" id="uploadfile_input" />
             <button>Submit</button>
         </form>
     </div>

@@ -32,10 +32,10 @@
     $post_link = htmlentities($post_link);
     $filename = htmlentities($filename);
     $token = $_SESSION['token']; // get CSRF token
-    if($post_title != null) {
-    echo "<h1>$post_title</h1>";
+    if ($post_title != null) {
+        echo "<h1>$post_title</h1>";
     } else {
-    echo "Untitled Post";
+        echo "Untitled Post";
     }
     echo "<p class='postedby'>posted by: $post_username on $post_date</p>";
     if ($_SESSION['username'] == $post_username) { // if the logged in user created this post, allow them to edit and delete the post
@@ -62,11 +62,11 @@
         </div>";
     }
     echo "<p>Body: $post_body</p>";
-    if($post_link != null) { //if link is provided in post, display it
-    echo "<p>Link: <a href='https://$post_link'>$post_link</a></p>";
-}
-    if($filename != null) { //if image file is provided in post, display it
-    echo "<img class='postimg' src='http://ec2-3-139-235-111.us-east-2.compute.amazonaws.com/~dabouti/mod3images/$filename' alt='post image'>";
+    if ($post_link != null) { //if link is provided in post, display it
+        echo "<p>Link: <a href='https://$post_link'>$post_link</a></p>";
+    }
+    if ($filename != null) { //if image file is provided in post, display it
+        echo "<img class='postimg' src='http://ec2-3-139-235-111.us-east-2.compute.amazonaws.com/~dabouti/mod3images/$filename' alt='post image'>";
     }
     $stmt->close();
     if ($_SESSION['loggedin'] == true) { // if current user is logged in, allow them to comment
