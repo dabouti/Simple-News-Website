@@ -59,7 +59,7 @@
     }
     echo "<p>Body: $post_body</p>";
     if($post_link != null) {
-    echo "<p>Link: <a href='$post_link'>$post_link</a></p>";
+    echo "<p>Link: <a href='https://$post_link'>$post_link</a></p>";
 }
     if($filename != null) {
     echo "<img class='postimg' src='http://ec2-3-139-235-111.us-east-2.compute.amazonaws.com/~dabouti/mod3images/$filename' alt='post image'>";

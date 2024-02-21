@@ -25,15 +25,16 @@ $stmt->close();
 
 if(isset($_FILES["uploadedfile"])) {
 	$filename = basename($_FILES['uploadedfile']['name']);
-	if (mime_content_type($filename) != 'image/jpeg' && mime_content_type($filename) != 'image/png') {
-    	header("Location: main.php");
-		exit;
-}
 	if (!preg_match('/^[\w_\.\-]+$/', $filename)) {
 		header("Location: main.php");
 		exit;
 	}
 	$file_path = "/home/dabouti/public_html/mod3images/$filename";
+	  $imageFileType = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
+	  if (!in_array($imageFileType, array('jpg', 'jpeg', 'png'))) {
+		  header("Location: main.php");
+		  exit;
+	  }
 	if (move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $file_path)) { //move the file to the directory
 		$stmt = $mysqli->prepare("update posts set filename = ? where post_id = ?");
 		if (!$stmt) {

@@ -30,7 +30,7 @@
 
             </p>
             <p>
-                <label for='link'>(OPTIONAL) Please enter your post link</label>
+                <label for='link'>(OPTIONAL) Please enter your post link (without preceding https://)</label>
                 <input type='text' name="link" id="link" placeholder="Enter Link">
             </p>
             <br>
