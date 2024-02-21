@@ -25,6 +25,11 @@
     $stmt->bind_result($post_title, $post_username, $post_date, $post_body, $post_link);
 
     $stmt->fetch();
+    $post_title = htmlentities($post_title);
+    $post_username = htmlentities($post_username);
+    $post_date = htmlentities($post_date);
+    $post_body = htmlentities($post_body);
+    $post_link = htmlentities($post_link);
     echo "<h1>$post_title</h1>";
     echo "<p class='postedby'>posted by: $post_username on $post_date</p>";
     if ($_SESSION['username'] == $post_username) {
@@ -98,7 +103,7 @@
             <input type='hidden' name='comment_id' value='$comment_id'>
             <button>Delete Comment</button>
             </form>";
-            }
+        }
         echo "<br>";
     }
     echo "</ol>\n";
