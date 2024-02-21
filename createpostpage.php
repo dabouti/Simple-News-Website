@@ -35,7 +35,7 @@
             </p>
             <br>
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000000" />
-		        <label for="uploadfile_input">(OPTIONAL) Upload Image</label> 
+		        <label for="uploadfile_input">(OPTIONAL) (MUST BE JPEG/PNG) Upload Image</label> 
                 <input name="uploadedfile" type="file" id="uploadfile_input" />
             <button>Submit</button>
         </form>

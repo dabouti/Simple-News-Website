@@ -15,14 +15,14 @@
     require 'database.php';
     include 'navbar.php';
     $post_id = $_GET['id'];
-    $stmt = $mysqli->prepare("select post_title, post_username, post_date, post_body, post_link from posts where post_id = ?");
+    $stmt = $mysqli->prepare("select post_title, post_username, post_date, post_body, post_link, filename from posts where post_id = ?");
     if (!$stmt) {
         printf("Query Prep Failed: %s\n", $mysqli->error);
         exit;
     }
     $stmt->bind_param("i", $post_id);
     $stmt->execute();
-    $stmt->bind_result($post_title, $post_username, $post_date, $post_body, $post_link);
+    $stmt->bind_result($post_title, $post_username, $post_date, $post_body, $post_link, $filename);
 
     $stmt->fetch();
     $post_title = htmlentities($post_title);
@@ -30,6 +30,7 @@
     $post_date = htmlentities($post_date);
     $post_body = htmlentities($post_body);
     $post_link = htmlentities($post_link);
+    $filename = htmlentities($filename);
     $token = $_SESSION['token'];
     echo "<h1>$post_title</h1>";
     echo "<p class='postedby'>posted by: $post_username on $post_date</p>";
@@ -57,7 +58,12 @@
         </div>";
     }
     echo "<p>Body: $post_body</p>";
+    if($post_link != null) {
     echo "<p>Link: <a href='$post_link'>$post_link</a></p>";
+}
+    if($filename != null) {
+    echo "<img class='postimg' src='http://ec2-3-139-235-111.us-east-2.compute.amazonaws.com/~dabouti/mod3images/$filename' alt='post image'>";
+    }
     $stmt->close();
     if ($_SESSION['loggedin'] == true) {
         echo "<form action=createcomment.php method='POST'>
