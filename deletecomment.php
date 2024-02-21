@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'database.php';
+require 'checkloggedin.php';
 $post_id = $_POST['post_id'];
 $comment_id = $_POST['comment_id'];
 if (!hash_equals($_SESSION['token'], $_POST['token'])) {
