@@ -32,7 +32,11 @@
     $post_link = htmlentities($post_link);
     $filename = htmlentities($filename);
     $token = $_SESSION['token']; // get CSRF token
+    if($post_title != null) {
     echo "<h1>$post_title</h1>";
+    } else {
+    echo "Untitled Post";
+    }
     echo "<p class='postedby'>posted by: $post_username on $post_date</p>";
     if ($_SESSION['username'] == $post_username) { // if the logged in user created this post, allow them to edit and delete the post
         echo "<div style='float: right; display: block;'>

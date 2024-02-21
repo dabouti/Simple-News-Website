@@ -91,7 +91,7 @@
             <form action='main.php' method='POST'>
             <button name='vote' value='vote'>Like</button>
             <input type='hidden' name='sortBy' value='descending'>
-            <input type='hidden' name='post_id' value='$post_id''>
+            <input type='hidden' name='post_id' value='$post_id'>
             </form> 
             <p class='postdetails'>%s on %s with %d likes</p></li>\n", // If the like button is pressed, it renders what post the user liked and sends it to the checker which we've explained above in line 17.
                 htmlspecialchars($post_id),
@@ -120,7 +120,7 @@
             <form action='main.php' method='POST'>
             <button name='vote' value='vote'>Like</button>
             <input type='hidden' name='sortBy' value='alphabetical'>
-            <input type='hidden' name='post_id' value='$post_id''>
+            <input type='hidden' name='post_id' value='$post_id'>
             </form>
             <p class='postdetails'>%s on %s with %d likes</p></li>\n",
                 htmlspecialchars($post_id),
@@ -149,7 +149,7 @@
             <form action='main.php' method='POST'>
             <button name='vote' value='vote'>Like</button>
             <input type='hidden' name='sortBy' value='likes'>
-            <input type='hidden' name='post_id' value='$post_id''>
+            <input type='hidden' name='post_id' value='$post_id'>
             </form>
             <p class='postdetails'>%s on %s with %d likes</p></li>\n",
                 htmlspecialchars($post_id),
@@ -177,7 +177,7 @@
                 "\t<li><a class='postlink' href='loadpost.php?id=%s'><p class='posttitle'>%s</p></a>
             <form action='main.php' method='POST'>
             <button name='vote' value='vote'>Like</button>
-            <input type='hidden' name='post_id' value='$post_id''>
+            <input type='hidden' name='post_id' value='$post_id'>
             </form>
             <p class='postdetails'>%s on %s with %d likes</p></li>\n",
                 htmlspecialchars($post_id),
