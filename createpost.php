@@ -7,11 +7,14 @@ $postbody = $_POST['postbody'];
 $username = $_SESSION['username'];
 $link = $_POST['link'];
 $currentDate = date('Y-m-d H:i');
+if (!hash_equals($_SESSION['token'], $_POST['token'])) {
+    die("Request forgery detected");
+}
 
 $stmt = $mysqli->prepare("insert into posts (post_username, post_date, post_title, post_body, post_link) values (?, ?, ?, ?, ?)");
-if(!$stmt){
-	printf("Query Prep Failed: %s\n", $mysqli->error);
-	exit;
+if (!$stmt) {
+    printf("Query Prep Failed: %s\n", $mysqli->error);
+    exit;
 }
 
 $stmt->bind_param('sssss', $username, $currentDate, $title, $postbody, $link);

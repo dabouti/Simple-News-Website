@@ -2,10 +2,12 @@ body {
     font-family: sans-serif;
 }
 
-.postedby, .commentpostedby {
+.postedby,
+.commentpostedby {
     font-size: 14px;
     color: gray;
 }
+
 button {
     background-color: green;
     border: none;
@@ -16,4 +18,4 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-  }
+}

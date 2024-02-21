@@ -3,7 +3,9 @@ session_start();
 require 'database.php';
 require 'checkloggedin.php';
 $post_id = $_POST['post_id'];
-
+if (!hash_equals($_SESSION['token'], $_POST['token'])) {
+    die("Request forgery detected");
+}
 
 $stmt = $mysqli->prepare("delete from comments where comment_postid = ?");
 if (!$stmt) {

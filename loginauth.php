@@ -17,6 +17,7 @@ if ($stmt->fetch()) {
     if ($cnt == 1 && password_verify($password, $pwd_hash)) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
+        $_SESSION['token'] = bin2hex(random_bytes(32));
         $stmt->close();
         header("Location: main.php");
         exit;

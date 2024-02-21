@@ -17,40 +17,40 @@ if ($_SESSION['loggedin'] == true) {
 
 <body>
     <div class='formdiv'>
-    <h1>Login</h1>
-    <form action='loginauth.php' method='POST'>
-        <label for='username'>Username</label>
-        <input type='text' name="username" id="username" placeholder="Enter Username">
-        <br>
-        <br>
-        <label for='password'>Password</label>
-        <input type='password' name="password" id="password" placeholder="Enter Password">
-        <div class='buttondiv'>
-        <button>Login</button>
-</div>
-        <br>
-        <br>
-    </form>
-</div>
-<div class='formdiv'>
-    <h1>Sign Up</h1>
-    <form action='signupauth.php' method='POST'>
-        <label for='username2'>Username</label>
-        <input type='text' name="username" id="username2" placeholder="Enter Username">
-        <br>
-        <br>
-        <label for='password2'>Password</label>
-        <input type='password' name="password" id="password2" placeholder="Enter Password">
-        <div class='buttondiv'>
-        <button>Sign Up</button>
-</div>
-    </form> 
-</div>
+        <h1>Login</h1>
+        <form action='loginauth.php' method='POST'>
+            <label for='username'>Username</label>
+            <input type='text' name="username" id="username" placeholder="Enter Username">
+            <br>
+            <br>
+            <label for='password'>Password</label>
+            <input type='password' name="password" id="password" placeholder="Enter Password">
+            <div class='buttondiv'>
+                <button>Login</button>
+            </div>
+            <br>
+            <br>
+        </form>
+    </div>
+    <div class='formdiv'>
+        <h1>Sign Up</h1>
+        <form action='signupauth.php' method='POST'>
+            <label for='username2'>Username</label>
+            <input type='text' name="username" id="username2" placeholder="Enter Username">
+            <br>
+            <br>
+            <label for='password2'>Password</label>
+            <input type='password' name="password" id="password2" placeholder="Enter Password">
+            <div class='buttondiv'>
+                <button>Sign Up</button>
+            </div>
+        </form>
+    </div>
     <form action='main.php'>
         <br>
         <div class='buttondiv'>
-        <button>OR Continue as Guest</button>
-</div>
+            <button>OR Continue as Guest</button>
+        </div>
     </form>
 
 </body>

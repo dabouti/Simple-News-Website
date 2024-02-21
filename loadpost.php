@@ -30,6 +30,7 @@
     $post_date = htmlentities($post_date);
     $post_body = htmlentities($post_body);
     $post_link = htmlentities($post_link);
+    $token = $_SESSION['token'];
     echo "<h1>$post_title</h1>";
     echo "<p class='postedby'>posted by: $post_username on $post_date</p>";
     if ($_SESSION['username'] == $post_username) {
@@ -37,17 +38,20 @@
         <form action='edittitle.php' method='POST'>
             <label for='newtitle'>Please enter a new post title:</label>
             <textarea name='newtitle' id='newtitle'>$post_title</textarea>
-            <input type='hidden' name='post_id' value='$post_id'>
+            <input type='hidden' name='post_id' value='$post_id'>    
+            <input type='hidden' name='token' value='$token'>
             <button>Submit New title</button>
         </form>
         <form action='editbody.php' method='POST'>
             <label for='postbody'>Please enter a new post body:</label>
             <textarea name='new_body' id='postbody'>$post_body</textarea>
             <input type='hidden' name='post_id' value='$post_id'>
+            <input type='hidden' name='token' value='$token'>
             <button>Submit New Body</button>
         </form>
         <form style='float: right;' action='deletepost.php' method='POST'>
             <input type='hidden' name='post_id' value='$post_id'>
+            <input type='hidden' name='token' value='$token'>
             <button>Delete Post</button>
         </form>
         </div>";
@@ -58,6 +62,7 @@
     if ($_SESSION['loggedin'] == true) {
         echo "<form action=createcomment.php method='POST'>
         <input type='hidden' name='postid' value='$post_id'>
+        <input type='hidden' name='token' value='$token'>
         <br>
         <br>
         <label for='commentbody'>Post Comment:</label>
@@ -87,6 +92,7 @@
             <textarea name='new_body' id='new_body'>$comment_body</textarea>
             <input type='hidden' name='post_id' value='$post_id'>
             <input type='hidden' name='comment_id' value='$comment_id'>
+            <input type='hidden' name='token' value='$token'>
             <button>Edit</button>
             </form>
             </div>";
@@ -101,6 +107,7 @@
             echo "<form action='deletecomment.php' method='POST'>
             <input type='hidden' name='post_id' value='$post_id'>
             <input type='hidden' name='comment_id' value='$comment_id'>
+            <input type='hidden' name='token' value='$token'>
             <button>Delete Comment</button>
             </form>";
         }

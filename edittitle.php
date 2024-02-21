@@ -4,6 +4,9 @@ require 'database.php';
 require 'checkloggedin.php';
 $newtitle = $_POST['newtitle'];
 $post_id = $_POST['post_id'];
+if (!hash_equals($_SESSION['token'], $_POST['token'])) {
+    die("Request forgery detected");
+}
 $stmt = $mysqli->prepare("update posts set post_title = ? where post_id = ?");
 if (!$stmt) {
     printf("Query Prep Failed: %s\n", $mysqli->error);
