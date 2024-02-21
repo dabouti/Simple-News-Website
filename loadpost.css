@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+}
+
+.postedby, .commentpostedby {
+    font-size: 14px;
+    color: gray;
+}
+button {
+    background-color: green;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }

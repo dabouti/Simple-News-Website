@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post</title>
     <link rel="stylesheet" type="text/css" href="navbar.css">
+    <link rel="stylesheet" type="text/css" href="loadpost.css">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
 
     $stmt->fetch();
     echo "<h1>$post_title</h1>";
-    echo "posted by: $post_username on $post_date";
+    echo "<p class='postedby'>posted by: $post_username on $post_date</p>";
     if ($_SESSION['username'] == $post_username) {
         echo "<div style='float: right; display: block;'>
         <form action='edittitle.php' method='POST'>
@@ -46,8 +47,8 @@
         </form>
         </div>";
     }
-    echo "<br><br> Body: $post_body <br>";
-    echo "<br> Link: <a href='$post_link'>$post_link</a>";
+    echo "<p>$post_body</p>";
+    echo "<p>Link: <a href='$post_link'>$post_link</a></p>";
     $stmt->close();
     if ($_SESSION['loggedin'] == true) {
         echo "<form action=createcomment.php method='POST'>
@@ -55,8 +56,8 @@
         <br>
         <br>
         <label for='commentbody'>Post Comment:</label>
-        <textarea name='commentbody' id='commentbody'></textarea>
-        <button>Submit Comment</button>
+        <div><textarea name='commentbody' id='commentbody'></textarea></div>
+        <div><button>Submit</button></div>
         <br>
         <br>
     </form>";
@@ -77,25 +78,28 @@
         if ($comment_username == $_SESSION['username']) {
             echo "<div style='float: right; display: block;'>
             <form action='editcomment.php' method='POST'>
-            <label for='new_body'>Please enter your new comment:</label>
+            <label for='new_body'>Edit Comment:</label>
             <textarea name='new_body' id='new_body'>$comment_body</textarea>
             <input type='hidden' name='post_id' value='$post_id'>
             <input type='hidden' name='comment_id' value='$comment_id'>
-            <button>Submit edited comment</button>
-            </form>
-            <form style='float: right;' action='deletecomment.php' method='POST'>
-            <input type='hidden' name='post_id' value='$post_id'>
-            <input type='hidden' name='comment_id' value='$comment_id'>
-            <button>Delete Comment</button>
+            <button>Edit</button>
             </form>
             </div>";
         }
         printf(
-            "\t<li>%s on %s<br> Comment: %s</li><br><br>\n",
+            "\t<li><span class='commentpostedby'>%s on %s</span><br> Comment: %s</li>\n",
             htmlspecialchars($comment_username),
             htmlspecialchars($comment_date),
             htmlspecialchars($comment_body)
         );
+        if ($comment_username == $_SESSION['username']) {
+            echo "<form action='deletecomment.php' method='POST'>
+            <input type='hidden' name='post_id' value='$post_id'>
+            <input type='hidden' name='comment_id' value='$comment_id'>
+            <button>Delete Comment</button>
+            </form>";
+            }
+        echo "<br>";
     }
     echo "</ol>\n";
 

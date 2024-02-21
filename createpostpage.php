@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Post</title>
     <link rel="stylesheet" type="text/css" href="navbar.css">
+    <link rel="stylesheet" type="text/css" href="createpostpage.css">
 </head>
 
 <body>
@@ -14,14 +15,16 @@
     require 'checkloggedin.php';
     include('navbar.php');
     ?>
+    <div class='formdiv'>
     <form action='createpost.php' method='POST'>
+        <h1>Create Post</h1>
         <p>
         <label for='title'>Please enter your post title:</label>
         <input type='text' name="title" id="title" placeholder="Enter Post Title" required>
 </p>
 <p>
         <label for='postbody'>Please enter your post body:</label>
-        <textarea name="postbody" id="postbody" placeholder="Enter Post Body"></textarea>
+        <textarea rows="10" name="postbody" id="postbody" placeholder="Enter Post Body"></textarea>
 </p>
 <p>
         <label for='link'>Please enter your post link: (OPTIONAL)</label>
@@ -30,7 +33,7 @@
 <br>
         <button>Submit</button>
     </form>
-
+</div>
 
 
 </body>
