@@ -18,6 +18,7 @@ if ($_SESSION['loggedin'] == true) {
 <body>
     <div class='formdiv'>
         <h1>Login</h1>
+        <!-- login form -->
         <form action='loginauth.php' method='POST'>
             <label for='username'>Username</label>
             <input type='text' name="username" id="username" placeholder="Enter Username">
@@ -32,6 +33,7 @@ if ($_SESSION['loggedin'] == true) {
             <br>
         </form>
     </div>
+    <!-- signup form -->
     <div class='formdiv'>
         <h1>Sign Up</h1>
         <form action='signupauth.php' method='POST'>
@@ -48,6 +50,7 @@ if ($_SESSION['loggedin'] == true) {
     </div>
     <form action='main.php'>
         <br>
+        <!-- continue as guest -->
         <div class='buttondiv'>
             <button>OR Continue as Guest</button>
         </div>

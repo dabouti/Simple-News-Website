@@ -4,7 +4,7 @@ require 'database.php';
 require 'checkloggedin.php';
 $post_id = $_POST['post_id'];
 $comment_id = $_POST['comment_id'];
-if (!hash_equals($_SESSION['token'], $_POST['token'])) {
+if (!hash_equals($_SESSION['token'], $_POST['token'])) {// check for validity of CSRF token
     die("Request forgery detected");
 }
 

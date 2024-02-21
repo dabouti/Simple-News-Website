@@ -5,10 +5,10 @@ require 'checkloggedin.php';
 $new_body = $_POST['new_body'];
 $post_id = $_POST['post_id'];
 $comment_id = $_POST['comment_id'];
-if (!hash_equals($_SESSION['token'], $_POST['token'])) {
+if (!hash_equals($_SESSION['token'], $_POST['token'])) {// check for validity of CSRF token
     die("Request forgery detected");
 }
-$stmt = $mysqli->prepare("update comments set comment_body = ? where comment_postid = ? and comment_id = ?");
+$stmt = $mysqli->prepare("update comments set comment_body = ? where comment_postid = ? and comment_id = ?"); //update comment body
 if (!$stmt) {
     printf("Query Prep Failed: %s\n", $mysqli->error);
     exit;
