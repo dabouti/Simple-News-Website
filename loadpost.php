@@ -52,7 +52,7 @@
         </form>
         </div>";
     }
-    echo "<p>$post_body</p>";
+    echo "<p>Body: $post_body</p>";
     echo "<p>Link: <a href='$post_link'>$post_link</a></p>";
     $stmt->close();
     if ($_SESSION['loggedin'] == true) {
