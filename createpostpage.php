@@ -16,7 +16,7 @@
     include('navbar.php');
     ?>
     <div class='formdiv'>
-        <form action='createpost.php' method='POST'>
+        <form action='createpost.php' method='POST' enctype="multipart/form-data">
             <h1>Create Post</h1>
             <p>
                 <label for='title'>Please enter your post title:</label>
@@ -30,10 +30,13 @@
 
             </p>
             <p>
-                <label for='link'>Please enter your post link: (OPTIONAL)</label>
+                <label for='link'>(OPTIONAL) Please enter your post link</label>
                 <input type='text' name="link" id="link" placeholder="Enter Link">
             </p>
             <br>
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000000" />
+		        <label for="uploadfile_input">(OPTIONAL) Upload Image</label> 
+                <input name="uploadedfile" type="file" id="uploadfile_input" />
             <button>Submit</button>
         </form>
     </div>
