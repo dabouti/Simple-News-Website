@@ -15,4 +15,5 @@ $stmt->bind_param("ii", $post_id, $comment_id);
 $stmt->execute();
 $stmt->close();
 header("Location: loadpost?id=$post_id");
+exit;
 ?>

@@ -2,6 +2,7 @@
 session_start();
 if ($_SESSION['loggedin'] == true) {
     header("Location: main.php");
+    exit;
 }
 ?>
 <!DOCTYPE html>

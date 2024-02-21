@@ -14,4 +14,5 @@ $stmt->bind_param("si", $newtitle, $post_id);
 $stmt->execute();
 $stmt->close();
 header("Location: loadpost?id=$post_id");
+exit;
 ?>

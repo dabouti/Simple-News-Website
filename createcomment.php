@@ -19,4 +19,5 @@
     
     $stmt->close();
     header("Location: loadpost.php?id=$comment_postid");
+    exit;
 ?>

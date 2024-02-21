@@ -23,4 +23,5 @@ $stmt->bind_param("i", $post_id);
 $stmt->execute();
 $stmt->close();
 header("Location: main.php");
+exit;
 ?>
