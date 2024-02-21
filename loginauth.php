@@ -17,16 +17,18 @@ if ($stmt->fetch()) {
     if ($cnt == 1 && password_verify($password, $pwd_hash)) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
+        $stmt->close();
         header("Location: main.php");
         exit;
     } else {
+        $stmt->close();
         header("Location: loginpage.php");
         exit;
     }
 } else {
+    $stmt->close();
     header("Location: loginpage.php");
     exit;
 }
 
-$stmt->close();
 ?>
