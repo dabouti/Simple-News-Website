@@ -10,6 +10,8 @@ Andrew Feenstra 508428 andrewjf04
 <h1>Creative Portion</h1>
 
 <p>1. Added the ability to add images to posts.</p>
+![image](https://github.com/cse330-spring-2024/module3-group-module3-509768-508428/assets/112195598/1f7b9d3d-1e11-457f-9c52-21b6b86d79eb)
+
 
 <p>2. Added like system, where each user can like a post. They can only like each unique post once and can press the like button again to remove their like.</p>
 
