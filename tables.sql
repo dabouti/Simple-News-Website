@@ -25,7 +25,7 @@
   `post_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `post_title` varchar(100) NOT NULL,
   `post_body` varchar(1000) NOT NULL,
-  `post_link` varchar(100) NOT NULL,
+  `post_link` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`post_id`),
   KEY `post_username` (`post_username`),
   CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`post_username`) REFERENCES `user` (`username`)
