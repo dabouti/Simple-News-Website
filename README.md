@@ -1,8 +1,3 @@
-# CSE330
-David Kim 509768 dabouti
-
-Andrew Feenstra 508428 andrewjf04
-
 <h1>Website Link</h1>
 
 <a href="http://ec2-3-139-235-111.us-east-2.compute.amazonaws.com/~dabouti/mod3group/main.php">http://ec2-3-139-235-111.us-east-2.compute.amazonaws.com/~dabouti/mod3group/main.php</a>
@@ -21,10 +16,6 @@ Andrew Feenstra 508428 andrewjf04
 <p>3. Added ability to sort posts by date ascending and descending, by number of likes, and by alphabetical order.</p>
 <img src="https://github.com/cse330-spring-2024/module3-group-module3-509768-508428/assets/112195598/b407b371-a817-4873-ba38-e499c0aaacfd">
 
-
-
-<h1>Additional Login Details:</h1>
-<p> mysql username: wustl_inst, password: wustl_pass </p>
 <p>For the website, make any sign in name and password you like</p>
 
 
