@@ -1,7 +1,3 @@
-<h1>Website Link</h1>
-
-<a href="http://ec2-3-139-235-111.us-east-2.compute.amazonaws.com/~dabouti/mod3group/main.php">http://ec2-3-139-235-111.us-east-2.compute.amazonaws.com/~dabouti/mod3group/main.php</a>
-
 <p>1. Added the ability to add images to posts.</p>
 <img src="https://github.com/cse330-spring-2024/module3-group-module3-509768-508428/assets/112195598/1f7b9d3d-1e11-457f-9c52-21b6b86d79eb">
 <img src="https://github.com/cse330-spring-2024/module3-group-module3-509768-508428/assets/112195598/59a8d3c4-2959-4904-b381-d1cf69be58cc">
